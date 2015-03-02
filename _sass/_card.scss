@@ -1,0 +1,164 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
+
+$background: #DEDEDE;
+$primary-color: #03a9f4;
+$secondary-color: #7f8c8d;
+$hover-color: darken($secondary-color, 20);
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+  font-family: 'Open Sans', helvetica, arial, sans-serif;
+  background: $background;
+}
+
+.card-holder {
+  margin: auto;
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
+
+  height: 350px;
+  width: 427px;
+}
+.card {
+
+  width: 427px;
+  height: 320px;
+
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  //box-shadow: 0 0 3px 0 $secondary-color;
+
+  &:hover {
+    transform: rotateY(180deg);
+  }
+}
+
+.front {
+  position: absolute;
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: $primary-color;
+
+  backface-visibility: hidden;
+
+  &__logo {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    height: auto;
+
+    width: 350px;
+  }
+}
+
+.back {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  background: white;
+
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+
+  &__avatar-container {
+    position: relative;
+    left: 0; top: 0;
+    float: left;
+
+    width: 135px;
+    height: 100%;
+  }
+
+  &__avatar {
+    position: absolute;
+    top: 40px; right: 0; left: 0;
+    margin: auto;
+
+    width: 85px;
+    height: 85px;
+  }
+
+  &__info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 15px;
+
+    width: 290px;
+    height: 100%;
+
+    &__name {
+      margin-top: 20px;
+
+      font-weight: 700;
+      font-size: 2.75em;
+      color: $primary-color;
+    }
+
+    &__site {
+      margin-top: -40px;
+
+      font-weight: 400;
+      font-size: 1.7em;
+
+      & a {
+        color: $secondary-color;
+        text-decoration: none;
+
+        &:hover {
+          color: $hover-color;
+        }
+      }
+    }
+
+    &__divider {
+      margin-top: -30px;
+
+      width: 290px;
+      height: 5px;
+
+      background: $primary-color;
+    }
+
+    &__social {
+      position: relative;
+      right: 10px;
+      bottom: 10px;
+
+      font-weight: 400;
+      font-size: 1.25em;
+
+      & a {
+        color: $secondary-color;
+        text-decoration: none;
+
+        &:hover {
+          color: $hover-color;
+        }
+
+        & .fa-li {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
