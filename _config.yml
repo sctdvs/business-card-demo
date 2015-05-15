@@ -2,7 +2,7 @@
 title: Scott Davis | Developer
 email: hello@sctdvs.co
 description: > # this means to ignore newlines until "baseurl:"
-  Hello! I'm Scott Davis and I develop engaging user experiences. Hover over the business card to find my contact information. Hope to hear from you soon!
+
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://sctdvs.co" # the base hostname & protocol for your site
 twitter_username: sctdvs
